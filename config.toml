@@ -1,19 +1,21 @@
 [scanner]
-interval_secs = 30
+interval_secs = 90
 # Empty = scan ALL series. Populate to filter specific series tickers.
 series_filter = [
-  # Tier 1 — Daily Weather (highest priority, ~6 brackets each, daily)
+  # Tier 1 — Daily Weather (14 series)
   "KXHIGHNY", "KXHIGHMIA", "KXHIGHLAX", "KXHIGHAUS",
   "KXHIGHCHI", "KXHIGHTPHX", "KXHIGHTSFO", "KXHIGHTATL",
   "KXHIGHPHIL", "KXHIGHTDC", "KXHIGHDEN",
   "KXLOWTNYC", "KXLOWTCHI", "KXLOWTAUS",
-  # Tier 2 — Economics (event-driven, wider spreads)
-  "KXCPI", "KXCPIYOY", "KXGDP", "KXPAYROLLS",
-  "KXU3", "KXFEDDECISION",
+  # Tier 2 — Crypto brackets, MM-supported (8 series)
+  "KXBTC", "KXBTCD", "KXETH", "KXETHD",
+  "KXDOGE", "KXDOGED", "KXSHIBA", "KXSHIBAD",
+  # Tier 3 — Stock index brackets, MM-supported (4 series)
+  "KXINX", "KXINXU", "KXNASDAQ100", "KXNASDAQ100U",
 ]
 # scan_delay_ms = 150        # ms between read requests (default: 150)
 # min_brackets = 2           # minimum active markets per event (default: 2)
-# max_brackets = 15          # maximum active markets per event (default: 15)
+max_brackets = 80            # maximum active markets per event
 # series_cache_secs = 300    # series list cache TTL in seconds (default: 300)
 
 [risk]
