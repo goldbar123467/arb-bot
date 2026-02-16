@@ -20,8 +20,8 @@ max_brackets = 80            # maximum active markets per event
 
 [risk]
 min_net_profit_cents = 10      # $0.10 minimum (5 contracts × $0.02)
-min_roi_pct = 1.0              # 1% minimum ROI
-position_size = 5              # Fixed 5 contracts
+min_roi_pct = 0.5              # 0.5% minimum ROI
+position_size = 25             # 25 contracts per bracket
 max_open_positions = 5         # Max concurrent arb positions
 
 [kalshi]
