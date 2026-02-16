@@ -14,7 +14,20 @@ pub struct ScannerConfig {
     pub interval_secs: u64,
     #[serde(default)]
     pub series_filter: Vec<String>,
+    #[serde(default = "default_scan_delay_ms")]
+    pub scan_delay_ms: u64,
+    #[serde(default = "default_min_brackets")]
+    pub min_brackets: usize,
+    #[serde(default = "default_max_brackets")]
+    pub max_brackets: usize,
+    #[serde(default = "default_series_cache_secs")]
+    pub series_cache_secs: u64,
 }
+
+fn default_scan_delay_ms() -> u64 { 150 }
+fn default_min_brackets() -> usize { 2 }
+fn default_max_brackets() -> usize { 15 }
+fn default_series_cache_secs() -> u64 { 300 }
 
 #[derive(Debug, Deserialize)]
 pub struct RiskConfig {

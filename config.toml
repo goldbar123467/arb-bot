@@ -2,6 +2,10 @@
 interval_secs = 30
 # Empty = scan ALL series. Populate to filter specific series tickers.
 series_filter = []
+# scan_delay_ms = 150        # ms between read requests (default: 150)
+# min_brackets = 2           # minimum active markets per event (default: 2)
+# max_brackets = 15          # maximum active markets per event (default: 15)
+# series_cache_secs = 300    # series list cache TTL in seconds (default: 300)
 
 [risk]
 min_net_profit_cents = 10      # $0.10 minimum (5 contracts × $0.02)

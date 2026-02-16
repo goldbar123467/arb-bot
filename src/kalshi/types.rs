@@ -9,7 +9,7 @@ pub struct SeriesResponse {
     pub cursor: Option<String>,
 }
 
-#[derive(Debug, Deserialize)]
+#[derive(Debug, Clone, Deserialize)]
 pub struct Series {
     pub ticker: String,
     pub title: String,
@@ -121,6 +121,10 @@ pub struct Order {
     pub no_price: Option<i64>,
     pub count: Option<i64>,
     pub remaining_count: Option<i64>,
+    #[serde(default)]
+    pub fill_count: Option<i64>,
+    #[serde(default)]
+    pub initial_count: Option<i64>,
 }
 
 // --- Bracket analysis types (internal, not API) ---
