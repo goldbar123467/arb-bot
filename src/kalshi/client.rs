@@ -201,11 +201,11 @@ impl KalshiClient {
         loop {
             let path = match &cursor {
                 Some(c) => format!(
-                    "/events?series_ticker={}&with_nested_markets=true&status=active&cursor={}",
+                    "/events?series_ticker={}&with_nested_markets=true&status=open&cursor={}",
                     series_ticker, c
                 ),
                 None => format!(
-                    "/events?series_ticker={}&with_nested_markets=true&status=active",
+                    "/events?series_ticker={}&with_nested_markets=true&status=open",
                     series_ticker
                 ),
             };

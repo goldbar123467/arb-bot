@@ -228,7 +228,7 @@ async fn scan_cycle(
             let active_markets: Vec<_> = event
                 .markets
                 .iter()
-                .filter(|m| m.status == "active")
+                .filter(|m| m.status == "active" || m.status == "open")
                 .collect();
 
             if active_markets.len() < config.scanner.min_brackets {
