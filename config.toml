@@ -1,0 +1,14 @@
+[scanner]
+interval_secs = 30
+# Empty = scan ALL series. Populate to filter specific series tickers.
+series_filter = []
+
+[risk]
+min_net_profit_cents = 10      # $0.10 minimum (5 contracts × $0.02)
+min_roi_pct = 1.0              # 1% minimum ROI
+position_size = 5              # Fixed 5 contracts
+max_open_positions = 5         # Max concurrent arb positions
+
+[kalshi]
+base_url = "https://api.elections.kalshi.com/trade-api/v2"
+rsa_key_path = "secrets/kalshi_rsa.pem"

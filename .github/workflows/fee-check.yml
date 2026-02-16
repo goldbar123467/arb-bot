@@ -1,0 +1,26 @@
+name: Weekly Fee Schedule Check
+
+on:
+  schedule:
+    - cron: '0 12 * * 1'  # Every Monday at noon UTC
+  workflow_dispatch:        # Manual trigger
+
+jobs:
+  check-fee:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check Kalshi fee schedule
+        run: ./scripts/check_fee_schedule.sh
+
+      - name: Verify FEE_BPS constant matches
+        run: |
+          # Extract FEE_BPS from source
+          fee_bps=$(grep -oP 'pub const FEE_BPS: i64 = \K\d+' src/detector.rs)
+          echo "FEE_BPS in source: ${fee_bps}"
+          if [ "$fee_bps" != "7" ]; then
+            echo "WARNING: FEE_BPS is ${fee_bps}, expected 7"
+            exit 1
+          fi
+          echo "PASS: FEE_BPS = 7"

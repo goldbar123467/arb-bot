@@ -1,0 +1,27 @@
+{
+    "orderbook": {
+        "no": [
+            [
+                70,
+                100
+            ]
+        ],
+        "no_dollars": [
+            [
+                "0.7000",
+                100
+            ]
+        ],
+        "yes": null,
+        "yes_dollars": null
+    },
+    "orderbook_fp": {
+        "no_dollars": [
+            [
+                "0.7000",
+                "100.00"
+            ]
+        ],
+        "yes_dollars": null
+    }
+}
